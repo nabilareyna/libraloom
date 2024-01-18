@@ -11,6 +11,7 @@ class PeminjamanPage extends GetView<CPeminjamanPage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return WScaffold(
       title: "Borrowing",
       leading: IconButton(
@@ -19,7 +20,7 @@ class PeminjamanPage extends GetView<CPeminjamanPage> {
           },
           icon: Icon(
             Icons.chevron_left_sharp,
-            size: 30,
+            size: 36,
           )),
       body: (context, orientation, platform) {
         return SingleChildScrollView(

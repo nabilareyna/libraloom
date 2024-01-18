@@ -6,6 +6,7 @@ import 'package:libraloom/component/widget/WCircularContainer.dart';
 import 'package:libraloom/component/widget/WScaffold.dart';
 import 'package:libraloom/module/homePage/component/bookListWidget.dart';
 import 'package:libraloom/module/homePage/controller/c_home_page.dart';
+import 'package:libraloom/routes/routes.dart';
 
 import 'package:libraloom/utils/appThemes.dart';
 import 'package:libraloom/utils/const.dart';
@@ -49,7 +50,11 @@ class HomePage extends GetView<CHomePage> {
                       ),
                     ),
                   ),
-                  ImageIcon(AssetImage('assets/icon/bell.png'), size: 36),
+                  InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.notification);
+                      },
+                      child: ImageIcon(AssetImage('assets/icon/bell.png'), size: 36)),
                 ],
               ),
               SizedBox(
@@ -98,61 +103,63 @@ class HomePage extends GetView<CHomePage> {
                   )
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: Const.siblingMargin(x: 8), vertical: Const.parentMargin(x: 2)),
-                child: Column(
-                  children: [
-                    Row(
+              Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: Const.siblingMargin(x: 6), vertical: Const.parentMargin(x: 2)),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("My Library", style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w700, fontSize: 32, color: Style.bgPrimaryColor)),
-                        ImageIcon(
-                          AssetImage('assets/icon/category.png'),
-                          size: 30,
+                        InkWell(
+                          onTap: () {
+                            Get.toNamed(Routes.category);
+                          },
+                          child: ImageIcon(
+                            AssetImage('assets/icon/category.png'),
+                            size: 30,
+                          ),
                         )
                       ],
                     ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    BookListWidget(
-                      bookImage: "assets/frame1.png",
-                      bookTitle: "Cintai Nusantara",
-                      bookCategory: "Budaya",
-                      bookDescription:
-                          "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                      bookAuthor: "By: Devi Anggita",
-                      bookStock: "19",
-                    ),
-                    BookListWidget(
-                      bookImage: "assets/frame1.png",
-                      bookTitle: "Cintai Nusantara",
-                      bookCategory: "Budaya",
-                      bookDescription:
-                          "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                      bookAuthor: "By: Devi Anggita",
-                      bookRating: true,
-                    ),
-                    BookListWidget(
-                      bookImage: "assets/frame1.png",
-                      bookTitle: "Cintai Nusantara",
-                      bookCategory: "Budaya",
-                      bookDescription:
-                          "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                      bookAuthor: "By: Devi Anggita",
-                      bookRating: true,
-                    ),
-                    BookListWidget(
-                      bookImage: "assets/frame1.png",
-                      bookTitle: "Cintai Nusantara",
-                      bookCategory: "Budaya",
-                      bookDescription:
-                          "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                      bookAuthor: "By: Devi Anggita",
-                      bookRating: true,
-                    )
-                  ],
-                ),
+                  ),
+                  BookListWidget(
+                    bookImage: "assets/frame1.png",
+                    bookTitle: "Cintai Nusantara",
+                    bookCategory: "Budaya",
+                    bookDescription:
+                        "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
+                    bookAuthor: "By: Devi Anggita",
+                    bookStock: "19",
+                  ),
+                  BookListWidget(
+                    bookImage: "assets/frame1.png",
+                    bookTitle: "Cintai Nusantara",
+                    bookCategory: "Budaya",
+                    bookDescription:
+                        "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
+                    bookAuthor: "By: Devi Anggita",
+                    bookRating: true,
+                  ),
+                  BookListWidget(
+                    bookImage: "assets/frame1.png",
+                    bookTitle: "Cintai Nusantara",
+                    bookCategory: "Budaya",
+                    bookDescription:
+                        "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
+                    bookAuthor: "By: Devi Anggita",
+                    bookRating: true,
+                  ),
+                  BookListWidget(
+                    bookImage: "assets/frame1.png",
+                    bookTitle: "Cintai Nusantara",
+                    bookCategory: "Budaya",
+                    bookDescription:
+                        "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
+                    bookAuthor: "By: Devi Anggita",
+                    bookRating: true,
+                  )
+                ],
               )
             ],
           )),

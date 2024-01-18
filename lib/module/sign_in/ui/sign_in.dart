@@ -96,7 +96,7 @@ class SignInPage extends GetView<CSignIn> {
                             onTap: () {
                               Get.toNamed(Routes.homepage);
                             },
-                            child: WButton(text: "Sign In", fontFamily: "ABeeZee"),
+                            child: WButton(text: "Sign In", fontFamily: "ABeeZee", radius: 15),
                           )
                         ]),
                       )

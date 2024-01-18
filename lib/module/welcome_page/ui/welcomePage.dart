@@ -20,9 +20,7 @@ class WelcomePage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           body: Column(
             children: [
-              SizedBox(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.828,
+              Expanded(
                 child: Center(
                   child: Text(
                     'LibraLoom',

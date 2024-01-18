@@ -19,14 +19,42 @@ class FavouritePage extends GetView<CFavouritePage> {
           },
           icon: Icon(
             Icons.chevron_left_sharp,
-            size: 30,
+            size: 36,
           )),
       body: (context, orientation, platform) {
         return SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(Const.parentMargin()),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                BookListFavouriteWidget(
+                  bookImage: "assets/frame1.png",
+                  bookTitle: "Cintai Nusantara",
+                  bookCategory: "Budaya",
+                  bookDescription:
+                      "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
+                  bookAuthor: "By: Devi Anggita",
+                  bookRating: true,
+                ),
+                BookListFavouriteWidget(
+                  bookImage: "assets/frame1.png",
+                  bookTitle: "Cintai Nusantara",
+                  bookCategory: "Budaya",
+                  bookDescription:
+                      "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
+                  bookAuthor: "By: Devi Anggita",
+                  bookRating: true,
+                ),
+                BookListFavouriteWidget(
+                  bookImage: "assets/frame1.png",
+                  bookTitle: "Cintai Nusantara",
+                  bookCategory: "Budaya",
+                  bookDescription:
+                      "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
+                  bookAuthor: "By: Devi Anggita",
+                  bookRating: true,
+                ),
                 BookListFavouriteWidget(
                   bookImage: "assets/frame1.png",
                   bookTitle: "Cintai Nusantara",

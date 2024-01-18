@@ -18,6 +18,7 @@ class BorrowedBookWidget extends StatelessWidget {
       padding: EdgeInsets.only(bottom: Const.parentMargin(x: 2)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(bookImage!),
           SizedBox(
@@ -50,16 +51,19 @@ class BorrowedBookWidget extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Text(
-                "Complete your loan before it matures",
-                style: TextStyle(color: Colors.black, fontFamily: "Poppins", fontSize: 16, fontWeight: FontWeight.w300),
+              Container(
+                width: 180,
+                child: Text(
+                  "Complete your loan before it matures",
+                  style: TextStyle(color: Colors.black, fontFamily: "Poppins", fontSize: 16, fontWeight: FontWeight.w300),
+                ),
               ),
               SizedBox(
                 height: 5,
               ),
               Container(
                 alignment: Alignment.center,
-                margin: EdgeInsets.only(left: Const.parentMargin(x: 10)),
+                margin: EdgeInsets.only(left: Const.parentMargin(x: 6)),
                 decoration:
                     BoxDecoration(color: status == "Finished" ? Style.primaryColor : Color(0XFFFED1E1E), borderRadius: BorderRadius.circular(20), boxShadow: [
                   BoxShadow(

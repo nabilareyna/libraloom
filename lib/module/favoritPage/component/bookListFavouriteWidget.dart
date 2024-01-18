@@ -21,6 +21,7 @@ class BookListFavouriteWidget extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.only(bottom: Const.parentMargin()),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(bookImage!),
@@ -37,11 +38,11 @@ class BookListFavouriteWidget extends StatelessWidget {
                     style: Style.bookTitle,
                   ),
                   SizedBox(
-                    width: 80,
+                    width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
-                    padding: EdgeInsets.only(left: Const.parentMargin()),
+                    padding: EdgeInsets.only(left: Const.siblingMargin(x: 2)),
                     decoration: BoxDecoration(color: Color(0XFFFD9D9D9), borderRadius: BorderRadius.circular(20), boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.3),
@@ -50,7 +51,7 @@ class BookListFavouriteWidget extends StatelessWidget {
                         offset: Offset(0, 4),
                       )
                     ]),
-                    width: 110,
+                    width: MediaQuery.of(context).size.width * 0.200,
                     height: 20,
                     child: Text(
                       bookCategory!,

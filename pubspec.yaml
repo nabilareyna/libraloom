@@ -76,6 +76,7 @@ flutter:
       - assets/icon/home.png
       - assets/icon/ribbon.png
       - assets/icon/user.png
+      - assets/icon/whitearrow.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -126,6 +127,9 @@ flutter:
             weight: 400
           - asset: fonts/ABeeZee/ABeeZee-Regular.ttf
             weight: 400
+      - family: Angkor
+        fonts:
+          - asset: fonts/Angkor/Angkor-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

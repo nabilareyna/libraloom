@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:libraloom/utils/appLayout.dart';
 import 'package:libraloom/utils/appThemes.dart';
+import 'package:libraloom/utils/const.dart';
 
 class WButton extends StatelessWidget {
+  const WButton({super.key, this.text, this.fontFamily, this.radius = 100, this.padding = 0});
   final String? text;
   final String? fontFamily;
-  const WButton({super.key, this.text, this.fontFamily});
+  final double radius;
+  final double padding;
 
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Container(
+      margin: EdgeInsets.only(bottom: padding),
       height: 40,
       width: size.width,
-      decoration: BoxDecoration(color: Style.primaryColor, borderRadius: BorderRadius.circular(10), boxShadow: [
+      decoration: BoxDecoration(color: Style.primaryColor, borderRadius: BorderRadius.circular(radius), boxShadow: [
         BoxShadow(
           color: Colors.black.withOpacity(0.3),
           spreadRadius: 0,

@@ -22,6 +22,7 @@ class BookListWidget extends StatelessWidget {
       padding: EdgeInsets.only(bottom: Const.parentMargin()),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(bookImage!),
           SizedBox(
@@ -40,7 +41,8 @@ class BookListWidget extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: Const.parentMargin(x: MediaQuery.of(context).size.width * 1)),
+                    alignment: Alignment.centerLeft,
+                    padding: EdgeInsets.only(left: Const.siblingMargin(x: 2)),
                     decoration: BoxDecoration(color: Color(0XFFFD9D9D9), borderRadius: BorderRadius.circular(20), boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.3),
@@ -49,7 +51,7 @@ class BookListWidget extends StatelessWidget {
                         offset: Offset(0, 4),
                       )
                     ]),
-                    width: MediaQuery.of(context).size.width * 0.110,
+                    width: MediaQuery.of(context).size.width * 0.200,
                     height: 20,
                     child: Text(
                       bookCategory!,
