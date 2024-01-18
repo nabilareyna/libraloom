@@ -1,0 +1,96 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:libraloom/component/widget/WAppbar.dart';
+import 'package:libraloom/module/homePage/controller/c_home_page.dart';
+import 'package:libraloom/utils/appThemes.dart';
+import 'package:libraloom/utils/const.dart';
+
+enum Platform { WEB, MOBILE, TAB }
+
+class WScaffold extends StatelessWidget {
+  final pageC = Get.put(CHomePage());
+
+  final PreferredSizeWidget? appBar;
+  final String? title;
+  final Widget Function(BuildContext context, Orientation orientation, Platform platform)? body;
+  final Widget? leading;
+  final bool resizeToAvoidBottomInset;
+  final Color bgColor;
+  final bool bottomBar;
+
+  WScaffold(
+      {Key? key, this.appBar, this.title, this.body, this.leading, this.resizeToAvoidBottomInset = false, this.bgColor = Colors.white, this.bottomBar = false})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(child: OrientationBuilder(builder: (BuildContext context, Orientation orientation) {
+        Platform platform = Platform.MOBILE;
+        if (Get.width <= Const.MAX_MOBILE_SCREEN) {
+          SystemChrome.setPreferredOrientations([
+            DeviceOrientation.portraitUp,
+            DeviceOrientation.portraitDown,
+          ]);
+          platform = Platform.MOBILE;
+        }
+        return Scaffold(
+          backgroundColor: bgColor,
+          appBar: appBar != null
+              ? appBar!
+              : title != null
+                  ? PreferredSize(
+                      child: WAppbar(
+                        title: Text(title!, style: Style.appBarTitle, overflow: TextOverflow.ellipsis),
+                        leading: leading,
+                      ),
+                      preferredSize: const Size.fromHeight(kToolbarHeight))
+                  : null,
+          body: body!(context, orientation, platform),
+          resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+          bottomNavigationBar: bottomBar
+              ? BottomNavigationBar(
+                  type: BottomNavigationBarType.fixed,
+                  backgroundColor: Color(0XFFFDCD3E5),
+                  items: const <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                        icon: ImageIcon(
+                          AssetImage("assets/icon/home.png"),
+                          size: 30,
+                          color: Colors.black,
+                        ),
+                        label: ('Home')),
+                    BottomNavigationBarItem(
+                        icon: ImageIcon(
+                          AssetImage("assets/icon/borrowing.png"),
+                          size: 46,
+                          color: Colors.black,
+                        ),
+                        label: ('Borrowing')),
+                    BottomNavigationBarItem(
+                        icon: ImageIcon(
+                          AssetImage("assets/icon/ribbon.png"),
+                          color: Colors.black,
+                          size: 30,
+                        ),
+                        label: ('Ribbon')),
+                    BottomNavigationBarItem(
+                        icon: ImageIcon(
+                          AssetImage("assets/icon/user.png"),
+                          color: Colors.black,
+                          size: 30,
+                        ),
+                        label: "Profile")
+                  ],
+                  currentIndex: pageC.pageIndex.value,
+                  showSelectedLabels: false,
+                  showUnselectedLabels: false,
+                  onTap: (int i) => pageC.changePage(i),
+                )
+              : null,
+        );
+      })),
+    );
+  }
+}

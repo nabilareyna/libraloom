@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:libraloom/component/widget/WButton.dart';
 import 'package:libraloom/component/widget/WTextFieldSign.dart';
-import 'package:libraloom/module/sign_up/controller/c_sign_up.dart';
-
+import 'package:libraloom/module/sign_in/controller/c_sign_in.dart';
 import 'package:libraloom/routes/routes.dart';
 import 'package:libraloom/utils/appThemes.dart';
 import 'package:libraloom/utils/const.dart';
 
-class SignUpPage extends GetView<CSignUp> {
-  const SignUpPage({super.key});
+class SignInPage extends GetView<CSignIn> {
+  const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,21 +48,13 @@ class SignUpPage extends GetView<CSignUp> {
                       Padding(
                         padding: EdgeInsets.all(Const.parentMargin(x: 2)),
                         child: Text(
-                          'Get Started',
+                          'Welcome Back',
                           style: TextStyle(fontFamily: 'Poppins', color: Style.primaryColor, fontWeight: FontWeight.w700, fontSize: 32),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(x: 2), vertical: Const.parentMargin(x: 1)),
                         child: Column(children: [
-                          WTextField(hintText: "NISN"),
-                          SizedBox(
-                            height: 50,
-                          ),
-                          WTextField(hintText: "Full Name"),
-                          SizedBox(
-                            height: 50,
-                          ),
                           WTextField(hintText: "Email"),
                           SizedBox(
                             height: 50,
@@ -73,53 +64,39 @@ class SignUpPage extends GetView<CSignUp> {
                             height: 30,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Obx(
-                                () => Checkbox(
-                                  value: controller.isChecked.isFalse,
-                                  activeColor: Style.primaryColor,
-                                  onChanged: (isChecked) {
-                                    controller.toggle(isChecked);
-                                  },
-                                ),
+                              Row(
+                                children: [
+                                  Obx(
+                                    () => Checkbox(
+                                      value: controller.isChecked.isFalse,
+                                      activeColor: Style.primaryColor,
+                                      onChanged: (isChecked) {
+                                        controller.toggle(isChecked);
+                                      },
+                                    ),
+                                  ),
+                                  Text(
+                                    'Remember Me',
+                                    style: TextStyle(fontFamily: 'Poppins', color: Color(0XFFF8D8888), fontSize: 15),
+                                  )
+                                ],
                               ),
                               Text(
-                                'I agree too the processing of ',
-                                style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontSize: 11),
-                              ),
-                              Text(
-                                'personal data',
-                                style: TextStyle(fontFamily: 'Poppins', color: Style.primaryColor, fontSize: 11),
-                              ),
+                                "Forget Password?",
+                                style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 15, color: Style.primaryColor),
+                              )
                             ],
                           ),
                           SizedBox(
                             height: 40,
                           ),
                           InkWell(
-                            onTap: () {},
-                            child: WButton(text: "Sign Up", fontFamily: "ABeeZee"),
-                          ),
-                          SizedBox(
-                            height: 60,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Already have an account?',
-                                style: TextStyle(fontFamily: 'Poppins', color: Color(0XFFF8D8888), fontSize: 15),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  Get.toNamed(Routes.signin);
-                                },
-                                child: Text(
-                                  ' Sign In',
-                                  style: TextStyle(fontFamily: 'Poppins', color: Style.primaryColor, fontSize: 15),
-                                ),
-                              )
-                            ],
+                            onTap: () {
+                              Get.toNamed(Routes.homepage);
+                            },
+                            child: WButton(text: "Sign In", fontFamily: "ABeeZee"),
                           )
                         ]),
                       )

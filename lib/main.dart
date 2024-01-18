@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:libraloom/module/sign_up/ui/sign_up.dart';
-import 'package:libraloom/module/welcome_page/ui/welcomePage.dart';
 import 'package:libraloom/routes/routes.dart';
 
 void main() {
@@ -22,7 +20,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SignUpPage(),
+      initialRoute: Routes.getWelcomePageRoute(),
+      getPages: Routes.routes,
     );
   }
 }
