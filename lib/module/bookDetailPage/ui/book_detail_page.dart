@@ -46,11 +46,16 @@ class BookDetailPage extends GetView<CBookDetail> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            WButton(
-                              text: "Borrow",
-                              fontFamily: "Poppins",
-                              radius: 20,
-                              width: 165,
+                            InkWell(
+                              onTap: () {
+                                Get.toNamed(Routes.payment);
+                              },
+                              child: WButton(
+                                text: "Borrow",
+                                fontFamily: "Poppins",
+                                radius: 20,
+                                width: 165,
+                              ),
                             ),
                             SizedBox(
                               width: 16,

@@ -35,7 +35,7 @@ class SignUpPage extends GetView<CSignUp> {
           body: Column(
             children: [
               SizedBox(
-                height: 150,
+                height: 100,
               ),
               Expanded(
                 child: Container(
@@ -56,19 +56,28 @@ class SignUpPage extends GetView<CSignUp> {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(x: 2), vertical: Const.parentMargin(x: 1)),
                         child: Column(children: [
-                          WTextField(hintText: "NISN"),
-                          SizedBox(
-                            height: 50,
+                          WTextField(
+                            hintText: "NISN",
+                            obscureText: false,
                           ),
-                          WTextField(hintText: "Full Name"),
                           SizedBox(
-                            height: 50,
+                            height: 30,
                           ),
-                          WTextField(hintText: "Email"),
+                          WTextField(hintText: "Full Name", obscureText: false),
                           SizedBox(
-                            height: 50,
+                            height: 30,
                           ),
-                          WTextField(hintText: "Password"),
+                          WTextField(
+                            hintText: "Email",
+                            obscureText: false,
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          WTextField(
+                            hintText: "Password",
+                            obscureText: true,
+                          ),
                           SizedBox(
                             height: 30,
                           ),
@@ -94,7 +103,7 @@ class SignUpPage extends GetView<CSignUp> {
                             ],
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 20,
                           ),
                           InkWell(
                             onTap: () {},
@@ -106,7 +115,7 @@ class SignUpPage extends GetView<CSignUp> {
                             ),
                           ),
                           SizedBox(
-                            height: 60,
+                            height: 30,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

@@ -4,10 +4,14 @@ import 'package:libraloom/module/bookDetailPage/ui/book_detail_page.dart';
 import 'package:libraloom/module/categoryPage/ui/category_page.dart';
 import 'package:libraloom/module/favoritPage/controller/c_favouritePage.dart';
 import 'package:libraloom/module/favoritPage/ui/favouritePage.dart';
+import 'package:libraloom/module/finishedPage/controller/c_finished_page.dart';
+import 'package:libraloom/module/finishedPage/ui/finished_page.dart';
 import 'package:libraloom/module/homePage/controller/c_home_page.dart';
 import 'package:libraloom/module/homePage/ui/home_page.dart';
 import 'package:libraloom/module/notification_page/controller/c_notification_page.dart';
 import 'package:libraloom/module/notification_page/ui/notification_page.dart';
+import 'package:libraloom/module/payment_page/controller/c_payment_page.dart';
+import 'package:libraloom/module/payment_page/ui/payment_page.dart';
 import 'package:libraloom/module/peminjaman/controller/c_peminjaman_page.dart';
 import 'package:libraloom/module/peminjaman/ui/peminjaman_page.dart';
 import 'package:libraloom/module/profilePage/controller/c_profile_page.dart';
@@ -16,6 +20,7 @@ import 'package:libraloom/module/sign_up/controller/c_sign_up.dart';
 import 'package:libraloom/module/sign_up/ui/sign_up.dart';
 import 'package:libraloom/module/sign_in/controller/c_sign_in.dart';
 import 'package:libraloom/module/sign_in/ui/sign_in.dart';
+import 'package:libraloom/module/succes_page/ui/success_page.dart';
 import 'package:libraloom/module/welcome_page/controller/c_welcomePage.dart';
 import 'package:libraloom/module/welcome_page/ui/welcomePage.dart';
 
@@ -30,6 +35,9 @@ class Routes {
   static const String notification = "/notification";
   static const String category = "/category";
   static const String bookDetail = "/book";
+  static const String payment = "/payment";
+  static const String success = "/success";
+  static const String finished = "/finished";
 
   static String getWelcomePageRoute() => welcomepage;
   static String getSignInRoute() => signin;
@@ -41,6 +49,9 @@ class Routes {
   static String getNotificationRoute() => notification;
   static String getCategoryRoute() => category;
   static String getBookDetailRoute() => bookDetail;
+  static String getPaymentRoute() => payment;
+  static String getSuccessRoute() => success;
+  static String getFinishedRoute() => finished;
 
   static List<GetPage> routes = [
     GetPage(
@@ -106,6 +117,21 @@ class Routes {
           Get.put(CBookDetail());
         }),
         transition: Transition.fadeIn),
+    GetPage(
+        name: payment,
+        page: () => const PaymentPage(),
+        binding: BindingsBuilder(() {
+          Get.put(CPaymentPage());
+        }),
+        transition: Transition.fadeIn),
+    GetPage(
+        name: finished,
+        page: () => const FinishedPage(),
+        binding: BindingsBuilder(() {
+          Get.put(CFinishedPage());
+        }),
+        transition: Transition.fadeIn),
     GetPage(name: category, page: () => const CategoryPage(), transition: Transition.fadeIn),
+    GetPage(name: success, page: () => const SuccessPage(), transition: Transition.fadeIn),
   ];
 }

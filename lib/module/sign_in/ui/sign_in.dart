@@ -55,11 +55,14 @@ class SignInPage extends GetView<CSignIn> {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(x: 2), vertical: Const.parentMargin(x: 1)),
                         child: Column(children: [
-                          WTextField(hintText: "Email"),
+                          WTextField(
+                            hintText: "Email",
+                            obscureText: false,
+                          ),
                           SizedBox(
                             height: 50,
                           ),
-                          WTextField(hintText: "Password"),
+                          WTextField(obscureText: true, hintText: "Password"),
                           SizedBox(
                             height: 30,
                           ),
