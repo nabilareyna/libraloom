@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:libraloom/module/bookDetailPage/controller/c_book_detail_page.dart';
+import 'package:libraloom/module/bookDetailPage/ui/book_detail_page.dart';
 import 'package:libraloom/module/categoryPage/ui/category_page.dart';
 import 'package:libraloom/module/favoritPage/controller/c_favouritePage.dart';
 import 'package:libraloom/module/favoritPage/ui/favouritePage.dart';
@@ -27,6 +29,7 @@ class Routes {
   static const String profile = "/profile";
   static const String notification = "/notification";
   static const String category = "/category";
+  static const String bookDetail = "/book";
 
   static String getWelcomePageRoute() => welcomepage;
   static String getSignInRoute() => signin;
@@ -37,6 +40,7 @@ class Routes {
   static String getProfileRoute() => profile;
   static String getNotificationRoute() => notification;
   static String getCategoryRoute() => category;
+  static String getBookDetailRoute() => bookDetail;
 
   static List<GetPage> routes = [
     GetPage(
@@ -93,6 +97,13 @@ class Routes {
         page: () => const NotificationPage(),
         binding: BindingsBuilder(() {
           Get.put(CNotificationPage());
+        }),
+        transition: Transition.fadeIn),
+    GetPage(
+        name: bookDetail,
+        page: () => const BookDetailPage(),
+        binding: BindingsBuilder(() {
+          Get.put(CBookDetail());
         }),
         transition: Transition.fadeIn),
     GetPage(name: category, page: () => const CategoryPage(), transition: Transition.fadeIn),

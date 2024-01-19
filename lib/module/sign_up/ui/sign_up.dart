@@ -98,7 +98,12 @@ class SignUpPage extends GetView<CSignUp> {
                           ),
                           InkWell(
                             onTap: () {},
-                            child: WButton(text: "Sign Up", fontFamily: "ABeeZee", radius: 15),
+                            child: WButton(
+                              text: "Sign Up",
+                              fontFamily: "ABeeZee",
+                              radius: 15,
+                              width: double.infinity,
+                            ),
                           ),
                           SizedBox(
                             height: 60,

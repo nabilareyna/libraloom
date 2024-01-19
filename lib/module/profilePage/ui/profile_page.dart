@@ -42,7 +42,7 @@ class ProfilePage extends GetView<CProfilePage> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
                 Container(
                     margin: EdgeInsets.only(bottom: Const.parentMargin()),

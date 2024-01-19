@@ -123,14 +123,19 @@ class HomePage extends GetView<CHomePage> {
                       ],
                     ),
                   ),
-                  BookListWidget(
-                    bookImage: "assets/frame1.png",
-                    bookTitle: "Cintai Nusantara",
-                    bookCategory: "Budaya",
-                    bookDescription:
-                        "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                    bookAuthor: "By: Devi Anggita",
-                    bookStock: "19",
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(Routes.bookDetail);
+                    },
+                    child: BookListWidget(
+                      bookImage: "assets/frame1.png",
+                      bookTitle: "Cintai Nusantara",
+                      bookCategory: "Budaya",
+                      bookDescription:
+                          "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
+                      bookAuthor: "By: Devi Anggita",
+                      bookStock: "19",
+                    ),
                   ),
                   BookListWidget(
                     bookImage: "assets/frame1.png",

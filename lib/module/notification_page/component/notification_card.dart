@@ -18,7 +18,10 @@ class NotificationCard extends StatelessWidget {
       height: 181,
       decoration: BoxDecoration(color: Style.greyColor, borderRadius: BorderRadius.circular(30)),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(user!, style: TextStyle(fontFamily: 'Poppins', color: Colors.black, fontWeight: FontWeight.w500, fontSize: 20)),
+        Text(
+          user!,
+          style: Style.nameUSer,
+        ),
         SizedBox(
           height: 5,
         ),

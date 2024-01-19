@@ -11,4 +11,5 @@ class Style {
   static TextStyle bookDesc = const TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w500, fontSize: 10);
   static TextStyle bookDescSecondary = const TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w500, fontSize: 10, color: Color(0XFFF8D8888));
   static TextStyle loanReturnDate = const TextStyle(color: Color(0XFFFB29AC7), fontFamily: 'Poppins', fontWeight: FontWeight.w500, fontSize: 16);
+  static TextStyle nameUSer = const TextStyle(fontFamily: 'Poppins', color: Colors.black, fontWeight: FontWeight.w500, fontSize: 20);
 }
