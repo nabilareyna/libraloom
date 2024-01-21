@@ -82,6 +82,7 @@ flutter:
       - assets/icon/save.png
       - assets/icon/send.png
       - assets/icon/check.png
+      - assets/icon/date.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

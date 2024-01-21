@@ -6,6 +6,7 @@ import 'package:libraloom/component/widget/WButton.dart';
 import 'package:libraloom/module/bookDetailPage/component/WAddReview.dart';
 import 'package:libraloom/module/bookDetailPage/component/WBookDescript.dart';
 import 'package:libraloom/module/bookDetailPage/component/WBookDetail.dart';
+import 'package:libraloom/module/bookDetailPage/component/WDialogLoan.dart';
 import 'package:libraloom/module/bookDetailPage/component/WReviewBox.dart';
 import 'package:libraloom/module/bookDetailPage/controller/c_book_detail_page.dart';
 
@@ -48,7 +49,11 @@ class BookDetailPage extends GetView<CBookDetail> {
                           children: [
                             InkWell(
                               onTap: () {
-                                Get.toNamed(Routes.payment);
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => WDialogLoan(
+                                          value: controller.dateLoan,
+                                        ));
                               },
                               child: WButton(
                                 text: "Borrow",
