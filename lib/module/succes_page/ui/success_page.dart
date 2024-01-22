@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:libraloom/routes/routes.dart';
 import 'package:libraloom/utils/const.dart';
 
 class SuccessPage extends StatelessWidget {
@@ -11,20 +13,25 @@ class SuccessPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            alignment: Alignment.center,
-            child: Column(
-              children: [
-                Image.asset("assets/icon/check.png"),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: Const.parentMargin()),
-                  width: 250,
-                  child: Text(
-                      textAlign: TextAlign.center,
-                      "Success. Thank you for borrowing from LibraLoom",
-                      style: TextStyle(fontSize: 24, color: Color(0XFFFCAB7B7), fontFamily: "Poppins", fontWeight: FontWeight.w700)),
-                )
-              ],
+          InkWell(
+            onTap: () {
+              Get.toNamed(Routes.homepage);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              child: Column(
+                children: [
+                  Image.asset("assets/icon/check.png"),
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: Const.parentMargin()),
+                    width: 250,
+                    child: Text(
+                        textAlign: TextAlign.center,
+                        "Success. Thank you for borrowing from LibraLoom",
+                        style: TextStyle(fontSize: 24, color: Color(0XFFFCAB7B7), fontFamily: "Poppins", fontWeight: FontWeight.w700)),
+                  )
+                ],
+              ),
             ),
           )
         ],

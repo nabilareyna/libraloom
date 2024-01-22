@@ -34,7 +34,7 @@ class SignInPage extends GetView<CSignIn> {
           body: Column(
             children: [
               SizedBox(
-                height: 150,
+                height: MediaQuery.of(context).size.width * 0.40,
               ),
               Expanded(
                 child: Container(
@@ -43,72 +43,74 @@ class SignInPage extends GetView<CSignIn> {
                       border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50)),
                       color: Colors.white),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.all(Const.parentMargin(x: 2)),
-                        child: Text(
-                          'Welcome Back',
-                          style: TextStyle(fontFamily: 'Poppins', color: Style.primaryColor, fontWeight: FontWeight.w700, fontSize: 32),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(Const.parentMargin(x: 2)),
+                          child: Text(
+                            'Welcome Back',
+                            style: TextStyle(fontFamily: 'Poppins', color: Style.primaryColor, fontWeight: FontWeight.w700, fontSize: 32),
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(x: 2), vertical: Const.parentMargin(x: 1)),
-                        child: Column(children: [
-                          WTextField(
-                            hintText: "Email",
-                            obscureText: false,
-                          ),
-                          SizedBox(
-                            height: 50,
-                          ),
-                          WTextField(obscureText: true, hintText: "Password"),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Obx(
-                                    () => Checkbox(
-                                      value: controller.isChecked.isFalse,
-                                      activeColor: Style.primaryColor,
-                                      onChanged: (isChecked) {
-                                        controller.toggle(isChecked);
-                                      },
-                                    ),
-                                  ),
-                                  Text(
-                                    'Remember Me',
-                                    style: TextStyle(fontFamily: 'Poppins', color: Color(0XFFF8D8888), fontSize: 15),
-                                  )
-                                ],
-                              ),
-                              Text(
-                                "Forget Password?",
-                                style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 15, color: Style.primaryColor),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Get.toNamed(Routes.homepage);
-                            },
-                            child: WButton(
-                              text: "Sign In",
-                              fontFamily: "ABeeZee",
-                              radius: 15,
-                              width: double.infinity,
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(x: 2), vertical: Const.parentMargin(x: 1)),
+                          child: Column(children: [
+                            WTextField(
+                              hintText: "Email",
+                              obscureText: false,
                             ),
-                          )
-                        ]),
-                      )
-                    ],
+                            SizedBox(
+                              height: MediaQuery.of(context).size.width * 0.10,
+                            ),
+                            WTextField(obscureText: true, hintText: "Password"),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.width * 0.080,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Obx(
+                                      () => Checkbox(
+                                        value: controller.isChecked.value,
+                                        activeColor: Style.primaryColor,
+                                        onChanged: (value) {
+                                          controller.isChecked.value = !controller.isChecked.value;
+                                        },
+                                      ),
+                                    ),
+                                    Text(
+                                      'Remember Me',
+                                      style: TextStyle(fontFamily: 'Poppins', color: Color(0XFFF8D8888), fontSize: 15),
+                                    )
+                                  ],
+                                ),
+                                Text(
+                                  "Forget Password?",
+                                  style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 15, color: Style.primaryColor),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.width * 0.10,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Get.toNamed(Routes.homepage);
+                              },
+                              child: WButton(
+                                text: "Sign In",
+                                fontFamily: "ABeeZee",
+                                radius: 15,
+                                width: double.infinity,
+                              ),
+                            )
+                          ]),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

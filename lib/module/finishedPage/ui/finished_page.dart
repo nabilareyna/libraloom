@@ -61,8 +61,15 @@ class FinishedPage extends StatelessWidget {
                 ],
               ),
             ),
-            TextFormField(
-              decoration: InputDecoration(),
+            Container(
+              margin: EdgeInsets.all(Const.parentMargin()),
+              padding: EdgeInsets.all(Const.siblingMargin()),
+              width: double.infinity,
+              height: 105,
+              decoration: BoxDecoration(border: Border.all()),
+              child: TextFormField(
+                decoration: InputDecoration(border: InputBorder.none),
+              ),
             )
           ],
         );

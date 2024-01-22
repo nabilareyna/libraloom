@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:libraloom/component/widget/WButton.dart';
+import 'package:libraloom/routes/routes.dart';
 import 'package:libraloom/utils/appThemes.dart';
 import 'package:libraloom/utils/const.dart';
 
@@ -38,7 +40,6 @@ class WDialogLoan extends StatelessWidget {
                     children: [
                       Expanded(
                         child: TextField(
-                          controller: value,
                           readOnly: true,
                           style: TextStyle(
                             color: Colors.black,
@@ -77,7 +78,6 @@ class WDialogLoan extends StatelessWidget {
                     children: [
                       Expanded(
                         child: TextField(
-                          controller: value,
                           readOnly: true,
                           style: TextStyle(
                             color: Colors.black,
@@ -103,11 +103,16 @@ class WDialogLoan extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            WButton(
-              fontFamily: "Poppins",
-              text: "Confirmation",
-              width: 160,
-              radius: 15,
+            InkWell(
+              onTap: () {
+                Get.toNamed(Routes.success);
+              },
+              child: WButton(
+                fontFamily: "Poppins",
+                text: "Confirmation",
+                width: 160,
+                radius: 15,
+              ),
             )
           ],
         ),

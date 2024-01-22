@@ -34,7 +34,7 @@ class HomePage extends GetView<CHomePage> {
                       shadowColor: Colors.black.withOpacity(0.8),
                       color: Colors.transparent,
                       child: TextField(
-                        obscureText: true,
+                        obscureText: false,
                         decoration: InputDecoration(
                             hintText: "Search",
                             hintStyle: TextStyle(color: Colors.white, fontFamily: "Poppins", fontSize: 15, fontWeight: FontWeight.w400),
@@ -45,7 +45,6 @@ class HomePage extends GetView<CHomePage> {
                               color: Colors.white,
                               size: 15,
                             ),
-                            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(40), borderSide: BorderSide(color: Colors.grey.shade300))),
                       ),
                     ),
