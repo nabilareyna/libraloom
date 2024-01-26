@@ -8,8 +8,6 @@ import 'package:libraloom/module/finishedPage/controller/c_finished_page.dart';
 import 'package:libraloom/module/finishedPage/ui/finished_page.dart';
 import 'package:libraloom/module/homePage/controller/c_home_page.dart';
 import 'package:libraloom/module/homePage/ui/home_page.dart';
-import 'package:libraloom/module/notification_page/controller/c_notification_page.dart';
-import 'package:libraloom/module/notification_page/ui/notification_page.dart';
 import 'package:libraloom/module/payment_page/controller/c_payment_page.dart';
 import 'package:libraloom/module/payment_page/ui/payment_page.dart';
 import 'package:libraloom/module/peminjaman/controller/c_peminjaman_page.dart';
@@ -32,7 +30,6 @@ class Routes {
   static const String peminjaman = "/peminjaman";
   static const String favorit = "/favorit";
   static const String profile = "/profile";
-  static const String notification = "/notification";
   static const String category = "/category";
   static const String bookDetail = "/book";
   static const String payment = "/payment";
@@ -46,7 +43,6 @@ class Routes {
   static String getPeminjamanRoute() => peminjaman;
   static String getFavoritRoute() => favorit;
   static String getProfileRoute() => profile;
-  static String getNotificationRoute() => notification;
   static String getCategoryRoute() => category;
   static String getBookDetailRoute() => bookDetail;
   static String getPaymentRoute() => payment;
@@ -101,13 +97,6 @@ class Routes {
         page: () => const ProfilePage(),
         binding: BindingsBuilder(() {
           Get.put(CProfilePage());
-        }),
-        transition: Transition.fadeIn),
-    GetPage(
-        name: notification,
-        page: () => const NotificationPage(),
-        binding: BindingsBuilder(() {
-          Get.put(CNotificationPage());
         }),
         transition: Transition.fadeIn),
     GetPage(

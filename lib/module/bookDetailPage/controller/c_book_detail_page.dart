@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class CBookDetail extends GetxController {
+  var bookmark = false.obs;
+
   DateTime dateLoan = DateTime.now();
   DateTime dateReturn = DateTime.now();
 

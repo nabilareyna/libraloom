@@ -38,7 +38,7 @@ class BookListFavouriteWidget extends StatelessWidget {
                     style: Style.bookTitle,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.05,
+                    width: MediaQuery.of(context).size.width * 0.04,
                   ),
                   Container(
                     alignment: Alignment.centerLeft,

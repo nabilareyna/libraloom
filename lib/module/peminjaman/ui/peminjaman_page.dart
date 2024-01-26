@@ -25,7 +25,7 @@ class PeminjamanPage extends GetView<CPeminjamanPage> {
       body: (context, orientation, platform) {
         return SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(), vertical: Const.parentMargin(x: 2)),
+            padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(x: 0.2), vertical: Const.parentMargin(x: 2)),
             child: Column(
               children: [
                 BorrowedBookWidget(

@@ -24,7 +24,7 @@ class FavouritePage extends GetView<CFavouritePage> {
       body: (context, orientation, platform) {
         return SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(Const.parentMargin()),
+            padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(x: 0.2), vertical: Const.parentMargin()),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

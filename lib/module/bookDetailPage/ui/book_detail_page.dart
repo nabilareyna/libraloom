@@ -65,11 +65,17 @@ class BookDetailPage extends GetView<CBookDetail> {
                             SizedBox(
                               width: 16,
                             ),
-                            ImageIcon(
-                              AssetImage("assets/icon/save.png"),
-                              color: Color(0XFFF8A1EED),
-                              size: 40,
-                            ),
+                            Obx(
+                              () => IconButton(
+                                  onPressed: () {
+                                    controller.bookmark.value = !controller.bookmark.value;
+                                  },
+                                  icon: Icon(
+                                    controller.bookmark.value ? Icons.bookmark_rounded : Icons.bookmark_outline_rounded,
+                                    color: Style.primaryColor,
+                                    size: 40,
+                                  )),
+                            )
                           ],
                         ),
                       ),

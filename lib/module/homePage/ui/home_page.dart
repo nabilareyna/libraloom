@@ -23,38 +23,29 @@ class HomePage extends GetView<CHomePage> {
           child: SafeArea(
               child: Column(
             children: [
-              Row(
-                children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: Const.siblingMargin(x: 6), vertical: Const.parentMargin(x: 2)),
-                    width: MediaQuery.of(context).size.width * 0.690,
-                    child: Material(
-                      elevation: 10.0,
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      shadowColor: Colors.black.withOpacity(0.8),
-                      color: Colors.transparent,
-                      child: TextField(
-                        obscureText: false,
-                        decoration: InputDecoration(
-                            hintText: "Search",
-                            hintStyle: TextStyle(color: Colors.white, fontFamily: "Poppins", fontSize: 15, fontWeight: FontWeight.w400),
-                            fillColor: Style.primaryColor,
-                            filled: true,
-                            prefixIcon: ImageIcon(
-                              AssetImage('assets/icon/search.png'),
-                              color: Colors.white,
-                              size: 15,
-                            ),
-                            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(40), borderSide: BorderSide(color: Colors.grey.shade300))),
-                      ),
-                    ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: Const.siblingMargin(x: 6), vertical: Const.parentMargin(x: 2)),
+                width: double.infinity,
+                child: Material(
+                  elevation: 10.0,
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  shadowColor: Colors.black.withOpacity(0.8),
+                  color: Colors.transparent,
+                  child: TextField(
+                    obscureText: false,
+                    decoration: InputDecoration(
+                        hintText: "Search",
+                        hintStyle: TextStyle(color: Colors.white, fontFamily: "Poppins", fontSize: 15, fontWeight: FontWeight.w400),
+                        fillColor: Style.primaryColor,
+                        filled: true,
+                        prefixIcon: ImageIcon(
+                          AssetImage('assets/icon/search.png'),
+                          color: Colors.white,
+                          size: 15,
+                        ),
+                        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(40), borderSide: BorderSide(color: Colors.grey.shade300))),
                   ),
-                  InkWell(
-                      onTap: () {
-                        Get.toNamed(Routes.notification);
-                      },
-                      child: ImageIcon(AssetImage('assets/icon/bell.png'), size: 36)),
-                ],
+                ),
               ),
               SizedBox(
                 height: 20,
@@ -65,15 +56,15 @@ class HomePage extends GetView<CHomePage> {
                       items: [
                         Image(
                           image: AssetImage('assets/test1.png'),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                         ),
                         Image(
                           image: AssetImage('assets/test1.png'),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                         ),
                         Image(
                           image: AssetImage('assets/test1.png'),
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                         ),
                       ],
                       options: CarouselOptions(
