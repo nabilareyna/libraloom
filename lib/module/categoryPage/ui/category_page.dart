@@ -11,6 +11,7 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WScaffold(
+      bottomBar: true,
       title: "Category",
       leading: IconButton(
           onPressed: () {
@@ -26,12 +27,17 @@ class CategoryPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: Const.parentMargin(), vertical: Const.parentMargin(x: 2)),
             child: Column(
               children: [
-                WButton(
-                  text: "Novel",
-                  fontFamily: "Poppins",
-                  radius: 200,
-                  padding: Const.parentMargin(),
-                  width: double.infinity,
+                InkWell(
+                  onTap: () {
+                    Get.toNamed(Routes.novel);
+                  },
+                  child: WButton(
+                    text: "Novel",
+                    fontFamily: "Poppins",
+                    radius: 200,
+                    padding: Const.parentMargin(),
+                    width: double.infinity,
+                  ),
                 ),
                 WButton(
                   text: "Magazine",

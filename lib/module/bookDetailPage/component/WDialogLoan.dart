@@ -101,11 +101,43 @@ class WDialogLoan extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: 10,
+            ),
+            Container(
+                width: 100,
+                decoration: BoxDecoration(border: Border.all(color: Style.greyColor)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    InkWell(
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text("-", style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w300, fontSize: 16), textAlign: TextAlign.center),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: 50,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                        color: Style.greyColor,
+                      )),
+                      child: Text("0", style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w300, fontSize: 16)),
+                    ),
+                    InkWell(
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text("+", style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w300, fontSize: 16)),
+                      ),
+                    )
+                  ],
+                )),
+            SizedBox(
+              height: 10,
             ),
             InkWell(
               onTap: () {
-                Get.toNamed(Routes.success);
+                Get.toNamed(Routes.payment);
               },
               child: WButton(
                 fontFamily: "Poppins",

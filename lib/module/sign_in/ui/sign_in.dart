@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:libraloom/component/widget/WButton.dart';
 import 'package:libraloom/component/widget/WTextFieldSign.dart';
+import 'package:libraloom/component/widget/WToast.dart';
 import 'package:libraloom/module/sign_in/controller/c_sign_in.dart';
 import 'package:libraloom/routes/routes.dart';
 import 'package:libraloom/utils/appThemes.dart';
@@ -59,11 +60,16 @@ class SignInPage extends GetView<CSignIn> {
                             WTextField(
                               hintText: "Email",
                               obscureText: false,
+                              controller: controller.emailController,
                             ),
                             SizedBox(
                               height: MediaQuery.of(context).size.width * 0.10,
                             ),
-                            WTextField(obscureText: true, hintText: "Password"),
+                            WTextField(
+                              obscureText: true,
+                              hintText: "Password",
+                              controller: controller.passController,
+                            ),
                             SizedBox(
                               height: MediaQuery.of(context).size.width * 0.080,
                             ),
@@ -89,7 +95,7 @@ class SignInPage extends GetView<CSignIn> {
                                 ),
                                 Text(
                                   "Forget Password?",
-                                  style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 15, color: Style.primaryColor),
+                                  style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 15, color: Color(0XFFF1557FF)),
                                 )
                               ],
                             ),

@@ -98,7 +98,7 @@ class SignUpPage extends GetView<CSignUp> {
                                 ),
                                 Text(
                                   'personal data',
-                                  style: TextStyle(fontFamily: 'Poppins', color: Style.primaryColor, fontSize: 11),
+                                  style: TextStyle(fontFamily: 'Poppins', color: Color(0XFFF1557FF), fontSize: 11),
                                 ),
                               ],
                             ),
@@ -106,7 +106,9 @@ class SignUpPage extends GetView<CSignUp> {
                               height: 20,
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Get.toNamed(Routes.homepage);
+                              },
                               child: WButton(
                                 text: "Sign Up",
                                 fontFamily: "ABeeZee",
@@ -130,7 +132,7 @@ class SignUpPage extends GetView<CSignUp> {
                                   },
                                   child: Text(
                                     ' Sign In',
-                                    style: TextStyle(fontFamily: 'Poppins', color: Style.primaryColor, fontSize: 15),
+                                    style: TextStyle(fontFamily: 'Poppins', color: Color(0XFFF1557FF), fontSize: 15),
                                   ),
                                 )
                               ],

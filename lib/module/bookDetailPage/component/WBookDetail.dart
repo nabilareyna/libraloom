@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:libraloom/utils/appThemes.dart';
 import 'package:libraloom/utils/const.dart';
 
 class BookDetailWidget extends StatelessWidget {
@@ -24,7 +25,7 @@ class BookDetailWidget extends StatelessWidget {
               ),
               Text(
                 "Devi Anggita",
-                style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w600, color: Color(0XFFF8A1EED), fontSize: 18),
+                style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w600, color: Style.primaryColor, fontSize: 18),
               )
             ],
           ),
@@ -42,7 +43,7 @@ class BookDetailWidget extends StatelessWidget {
               ),
               Text(
                 "Gramedia Pustaka",
-                style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w600, color: Color(0XFFF8A1EED), fontSize: 18),
+                style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w600, color: Style.primaryColor, fontSize: 18),
               )
             ],
           ),
@@ -60,7 +61,7 @@ class BookDetailWidget extends StatelessWidget {
               ),
               Text(
                 "2010",
-                style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w600, color: Color(0XFFF8A1EED), fontSize: 18),
+                style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w600, color: Style.primaryColor, fontSize: 18),
               )
             ],
           ),
@@ -78,7 +79,7 @@ class BookDetailWidget extends StatelessWidget {
               ),
               Text(
                 "Budaya",
-                style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w600, color: Color(0XFFF8A1EED), fontSize: 18),
+                style: TextStyle(fontFamily: "Poppins", fontWeight: FontWeight.w600, color: Style.primaryColor, fontSize: 18),
               )
             ],
           )

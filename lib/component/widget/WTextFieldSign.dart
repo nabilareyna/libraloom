@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class WTextField extends StatelessWidget {
-  const WTextField({super.key, this.hintText, this.obscureText = false});
+  const WTextField({super.key, this.hintText, this.obscureText = false, this.controller});
   final String? hintText;
   final bool obscureText;
+  final controller;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -12,6 +13,7 @@ class WTextField extends StatelessWidget {
       shadowColor: Colors.black.withOpacity(0.8),
       color: Colors.transparent,
       child: TextField(
+        controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
             hintText: hintText!,

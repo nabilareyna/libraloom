@@ -4,10 +4,11 @@ import 'package:libraloom/module/bookDetailPage/ui/book_detail_page.dart';
 import 'package:libraloom/module/categoryPage/ui/category_page.dart';
 import 'package:libraloom/module/favoritPage/controller/c_favouritePage.dart';
 import 'package:libraloom/module/favoritPage/ui/favouritePage.dart';
-import 'package:libraloom/module/finishedPage/controller/c_finished_page.dart';
-import 'package:libraloom/module/finishedPage/ui/finished_page.dart';
+
 import 'package:libraloom/module/homePage/controller/c_home_page.dart';
 import 'package:libraloom/module/homePage/ui/home_page.dart';
+import 'package:libraloom/module/novelPage/controller/c_novel_page.dart';
+import 'package:libraloom/module/novelPage/ui/novel_page.dart';
 import 'package:libraloom/module/payment_page/controller/c_payment_page.dart';
 import 'package:libraloom/module/payment_page/ui/payment_page.dart';
 import 'package:libraloom/module/peminjaman/controller/c_peminjaman_page.dart';
@@ -34,7 +35,7 @@ class Routes {
   static const String bookDetail = "/book";
   static const String payment = "/payment";
   static const String success = "/success";
-  static const String finished = "/finished";
+  static const String novel = "/novel";
 
   static String getWelcomePageRoute() => welcomepage;
   static String getSignInRoute() => signin;
@@ -47,7 +48,7 @@ class Routes {
   static String getBookDetailRoute() => bookDetail;
   static String getPaymentRoute() => payment;
   static String getSuccessRoute() => success;
-  static String getFinishedRoute() => finished;
+  static String getNovelRoute() => novel;
 
   static List<GetPage> routes = [
     GetPage(
@@ -114,10 +115,10 @@ class Routes {
         }),
         transition: Transition.fadeIn),
     GetPage(
-        name: finished,
-        page: () => const FinishedPage(),
+        name: novel,
+        page: () => const NovelPage(),
         binding: BindingsBuilder(() {
-          Get.put(CFinishedPage());
+          Get.put(CNovelpage());
         }),
         transition: Transition.fadeIn),
     GetPage(name: category, page: () => const CategoryPage(), transition: Transition.fadeIn),

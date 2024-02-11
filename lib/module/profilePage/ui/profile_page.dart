@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:libraloom/module/profilePage/controller/c_profile_page.dart';
 import 'package:libraloom/routes/routes.dart';
+import 'package:libraloom/utils/appThemes.dart';
 import 'package:libraloom/utils/const.dart';
 
 class ProfilePage extends GetView<CProfilePage> {
@@ -152,6 +153,29 @@ class ProfilePage extends GetView<CProfilePage> {
                         )
                       ],
                     )),
+                InkWell(
+                  onTap: () {
+                    Get.toNamed(Routes.welcomepage);
+                  },
+                  child: Container(
+                    height: 45,
+                    width: 125,
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10), boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        spreadRadius: 0,
+                        blurRadius: 6,
+                        offset: Offset(0, 4),
+                      )
+                    ]),
+                    child: Center(
+                      child: Text(
+                        "LOG OUT",
+                        style: TextStyle(color: Colors.black, fontSize: 20, fontFamily: "Poppins", fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

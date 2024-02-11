@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:libraloom/component/widget/WButton.dart';
+import 'package:libraloom/component/widget/WScaffold.dart';
 
 import 'package:libraloom/module/bookDetailPage/component/WAddReview.dart';
 import 'package:libraloom/module/bookDetailPage/component/WBookDescript.dart';
@@ -19,21 +20,22 @@ class BookDetailPage extends GetView<CBookDetail> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Style.bgPrimaryColor,
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              Get.toNamed(Routes.homepage);
-            },
-            icon: Icon(
-              Icons.chevron_left_sharp,
-              size: 36,
-            ),
+    return WScaffold(
+      // backgroundColor: Style.primaryColor,
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Get.toNamed(Routes.homepage);
+          },
+          icon: Icon(
+            Icons.chevron_left_sharp,
+            size: 36,
           ),
-          backgroundColor: Colors.transparent,
         ),
-        body: SingleChildScrollView(
+        backgroundColor: Colors.transparent,
+      ),
+      body: (context, orientation, platform) {
+        return SingleChildScrollView(
           child: Column(
             children: [
               CustomStackWidget(),
@@ -95,7 +97,7 @@ class BookDetailPage extends GetView<CBookDetail> {
                             padding: EdgeInsets.only(left: Const.siblingMargin()),
                             child: Text(
                               "Review",
-                              style: TextStyle(color: Color(0XFFFB29AC7), fontFamily: 'Poppins', fontWeight: FontWeight.w600, fontSize: 24),
+                              style: TextStyle(color: Style.primaryColor, fontFamily: 'Poppins', fontWeight: FontWeight.w600, fontSize: 24),
                             ),
                           ),
                           SizedBox(
@@ -109,7 +111,11 @@ class BookDetailPage extends GetView<CBookDetail> {
                   ))
             ],
           ),
-        ));
+        );
+      },
+      bottomBar: true,
+      bgColor: Style.primaryColor,
+    );
   }
 }
 
@@ -135,7 +141,7 @@ class CustomStackWidget extends StatelessWidget {
                   children: [
                     Text("Cintai Nusantara",
                         style:
-                            TextStyle(color: Colors.black, fontFamily: 'Merriweather', fontStyle: FontStyle.italic, fontWeight: FontWeight.w700, fontSize: 36)),
+                            TextStyle(color: Colors.white, fontFamily: 'Merriweather', fontStyle: FontStyle.italic, fontWeight: FontWeight.w700, fontSize: 36)),
                     SizedBox(
                       height: 20,
                     ),

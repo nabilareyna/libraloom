@@ -13,6 +13,7 @@ class PeminjamanPage extends GetView<CPeminjamanPage> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return WScaffold(
+      bottomBar: true,
       title: "Borrowing",
       leading: IconButton(
           onPressed: () {

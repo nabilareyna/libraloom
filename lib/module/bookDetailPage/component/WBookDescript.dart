@@ -24,8 +24,8 @@ class BookDescriptionWidget extends StatelessWidget {
             trimMode: TrimMode.Length,
             trimCollapsedText: "Selengkapnya",
             trimExpandedText: "Tampilkan Lebih Sedikit",
-            lessStyle: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 16, color: Color(0XFFF8A1EED)),
-            moreStyle: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 16, color: Color(0XFFF8A1EED)),
+            lessStyle: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 16, color: Color(0XFFF1557FF)),
+            moreStyle: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w400, fontSize: 16, color: Color(0XFFF1557FF)),
             "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
             style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w500, fontSize: 16),
           )

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:libraloom/utils/appLayout.dart';
 import 'package:libraloom/utils/appThemes.dart';
 
 class WButton extends StatelessWidget {
@@ -12,7 +11,6 @@ class WButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
     return Container(
       margin: EdgeInsets.only(bottom: padding),
       height: 40,

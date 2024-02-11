@@ -52,40 +52,41 @@ class WScaffold extends StatelessWidget {
           bottomNavigationBar: bottomBar
               ? BottomNavigationBar(
                   type: BottomNavigationBarType.fixed,
-                  backgroundColor: Color(0XFFFDCD3E5),
+                  backgroundColor: Style.greyColor,
                   items: const <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
                         icon: ImageIcon(
                           AssetImage("assets/icon/home.png"),
                           size: 30,
-                          color: Colors.black,
+                          color: Color(0XFFF524C57),
                         ),
                         label: ('Home')),
                     BottomNavigationBarItem(
                         icon: ImageIcon(
                           AssetImage("assets/icon/borrowing.png"),
-                          size: 46,
-                          color: Colors.black,
+                          size: 30,
+                          color: Color(0XFFF524C57),
                         ),
                         label: ('Borrowing')),
                     BottomNavigationBarItem(
                         icon: ImageIcon(
                           AssetImage("assets/icon/ribbon.png"),
-                          color: Colors.black,
-                          size: 30,
+                          color: Color(0XFFF524C57),
+                          size: 34,
                         ),
-                        label: ('Ribbon')),
+                        label: ('Bookmark')),
                     BottomNavigationBarItem(
                         icon: ImageIcon(
                           AssetImage("assets/icon/user.png"),
-                          color: Colors.black,
-                          size: 30,
+                          color: Color(0XFFF524C57),
+                          size: 34,
                         ),
                         label: "Profile")
                   ],
                   currentIndex: pageC.pageIndex.value,
-                  showSelectedLabels: false,
-                  showUnselectedLabels: false,
+                  showSelectedLabels: true,
+                  showUnselectedLabels: true,
+                  selectedItemColor: Color(0XFFF524C57),
                   onTap: (int i) => pageC.changePage(i),
                 )
               : null,
