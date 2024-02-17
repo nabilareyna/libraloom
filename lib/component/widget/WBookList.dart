@@ -60,6 +60,7 @@ class BookList extends StatelessWidget {
                 height: 10,
               ),
               RatingBar.builder(
+                ignoreGestures: true,
                 direction: Axis.horizontal,
                 itemSize: 24,
                 initialRating: 4,

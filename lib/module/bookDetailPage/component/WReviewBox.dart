@@ -29,6 +29,7 @@ class ReviewBoxWidget extends StatelessWidget {
           style: TextStyle(fontFamily: "Poppins", fontSize: 15, fontWeight: FontWeight.w400),
         ),
         RatingBar.builder(
+          ignoreGestures: true,
           direction: Axis.horizontal,
           itemSize: 24,
           initialRating: 4,
