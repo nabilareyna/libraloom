@@ -113,42 +113,31 @@ class HomePage extends GetView<CHomePage> {
                       ],
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Get.toNamed(Routes.bookDetail);
-                    },
-                    child: BookList(
-                      bookImage: "assets/frame1.png",
-                      bookTitle: "Cintai Nusantara",
-                      bookCategory: "Budaya",
-                      bookDescription:
-                          "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                      bookAuthor: "By: Devi Anggita",
-                    ),
-                  ),
-                  BookList(
-                    bookImage: "assets/frame1.png",
-                    bookTitle: "Cintai Nusantara",
-                    bookCategory: "Budaya",
-                    bookDescription:
-                        "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                    bookAuthor: "By: Devi Anggita",
-                  ),
-                  BookList(
-                    bookImage: "assets/frame1.png",
-                    bookTitle: "Cintai Nusantara",
-                    bookCategory: "Budaya",
-                    bookDescription:
-                        "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                    bookAuthor: "By: Devi Anggita",
-                  ),
-                  BookList(
-                    bookImage: "assets/frame1.png",
-                    bookTitle: "Cintai Nusantara",
-                    bookCategory: "Budaya",
-                    bookDescription:
-                        "Buku “Nusantara: Sejarah Indonesia” yang diterbitkan pada tahun 1943 ini membahas sejarah Indonesia dari periode prasejarah hingga masa penjajahan kolonial Belanda.",
-                    bookAuthor: "By: Devi Anggita",
+                  Obx(
+                    () => SingleChildScrollView(
+                        child: controller.isLoading.isTrue
+                            ? Column(
+                                children: [
+                                  CircularProgressIndicator(),
+                                  Text(
+                                    'Memuat buku....',
+                                    style: TextStyle(fontSize: 15, color: Colors.grey, fontWeight: FontWeight.w500, fontFamily: 'Poppins'),
+                                  ),
+                                ],
+                              )
+                            : ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                itemCount: controller.buku.length,
+                                shrinkWrap: true,
+                                itemBuilder: (context, index) {
+                                  return BookList(
+                                    bookTitle: controller.buku[index]['judul'],
+                                    bookDescription: controller.buku[index]['deskripsi'],
+                                    bookAuthor: controller.buku[index]['penulis'],
+                                    bookCategory: "aaa",
+                                    bookImage: "assets/frame1.png",
+                                  );
+                                })),
                   )
                 ],
               )

@@ -1,4 +1,5 @@
 String url = 'http://10.0.2.2:8000/api/';
+String urlChrome = 'http://localhost:55623/api';
 
 class Const {
   static const double PARENT_MARGIN = 20.0;
